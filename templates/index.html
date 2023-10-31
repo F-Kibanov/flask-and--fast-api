@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title> {{ page }} </title>
+</head>
+<body>
+<nav class="navbar bg-body-tertiary">
+  <form class="container-fluid justify-content-start">
+      <a href="/"><button type="button" class="btn btn-outline-success me-2" role="button">Главная</button></a>
+      <a href="/outerwear"><button type="button" class="btn btn-outline-success me-2" role="button">Верхняя одежда</button></a>
+      <a href="/shoes"><button type="button" class="btn btn-outline-success me-2" role="button">Обувь</button></a>
+      <a href="/hats"><button type="button" class="btn btn-outline-success me-2" role="button">Шапки</button></a>
+  </form>
+</nav>
+<div class="container">
+    <h1>{{ page }}</h1>
+    <div class="container-lg d-flex bd-highlight">
+        {% for item in items %}
+        <div class="card p-2 bd-highlight">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ item.title }}</h5>
+                <p class="card-subtitle">{{ item.desc }}</p>
+                <p class="card-text">{{ item.price }}</p>
+                <a href="#" class="btn btn-primary">Buy it!</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <p class="alert-dark">Интернет-магазин 2023</p>
+</div>
+</body>
+</html>
