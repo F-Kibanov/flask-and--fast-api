@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login page
+{% endblock %}
+
+{% block content %}
+<form action="/login" method="post">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <input type="text" autocomplete="given-name" name="name" placeholder="Имя"><br><br>
+    <input type="email" name="email" autocomplete="given-name" placeholder="Адрес электронной почты"><br><br>
+    <input type="submit" value="Отправить">
+</form>
+{% endblock %}
